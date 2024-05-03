@@ -25,15 +25,14 @@ function compareVersion(version1: string, version2: string): number {
     const maxLength = Math.max(firstVersionArray.length, secondVersionArray.length)
 
     for (let i = 0; i < maxLength; i++) {
-        const [firstIteration = 0, secondIteration = 0] = [firstVersionArray[i], secondVersionArray[i]]
+        const firstIteration = firstVersionArray[i] || 0
+        const secondIteration = secondVersionArray[i] || 0
 
-        if (firstIteration < secondIteration) {
-            return -1
-        } else if (firstIteration > secondIteration) {
-            return 1
+        if (firstIteration !== secondIteration) {
+            return firstIteration < secondIteration ? -1 : 1
         }
     }
-    return 0
+    return 0;
 }
 
 console.log(compareVersion("1.01", "1.001"))
