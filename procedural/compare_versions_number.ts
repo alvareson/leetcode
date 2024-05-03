@@ -20,13 +20,12 @@
  */
 
 function compareVersion(version1: string, version2: string): number {
-    const firstVersionArray: string[] = version1.split(".")
-    const secondVersionArray: string[] = version2.split(".")
+    const firstVersionArray: number[] = version1.split(".").map(Number)
+    const secondVersionArray: number[] = version2.split(".").map(Number)
     const maxLength = Math.max(firstVersionArray.length, secondVersionArray.length)
 
     for (let i = 0; i < maxLength; i++) {
-        const firstIteration = parseInt(firstVersionArray[i] || "0")
-        const secondIteration = parseInt(secondVersionArray[i] || "0")
+        const [firstIteration = 0, secondIteration = 0] = [firstVersionArray[i], secondVersionArray[i]]
 
         if (firstIteration < secondIteration) {
             return -1
