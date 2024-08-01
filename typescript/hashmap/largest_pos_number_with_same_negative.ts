@@ -7,6 +7,7 @@
 function findMaxK(nums: number[]): number {
     const hashmap: Map<number, boolean> = new Map<number, boolean>()
     nums.forEach(num => hashmap.set(num, true))
+    
     let largestK: number = -1
     nums.forEach(num => {
         if (hashmap.has(-num) && num > 0) {
