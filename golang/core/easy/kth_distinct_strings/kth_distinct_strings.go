@@ -1,7 +1,7 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func kthDistinct(arr []string, k int) string {
