@@ -1,7 +1,7 @@
 function minLength(s: string): number {
   let initlettersArray: string[] = s.split("")
 
-  function checkAndSpliceOperation(arr: string[]): string[] {
+  const checkAndSpliceOperation = (arr: string[]): string[] => {
     let wasOperation = false
     let stuck = ""
 
